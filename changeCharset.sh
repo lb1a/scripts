@@ -12,10 +12,7 @@ cd $MOMENTARY_DIR
 else
 cd $CHOSEN_DIR = $2
 for i in $(find . -name "*html"); do
-        TEST=$(iconv -t utf8//IGNORE $i | grep "iconv") 2>&1 > /dev/null
-	if [ "$TEST" != "" ]; then
         echo $i
-	fi
 done
 
 fi
