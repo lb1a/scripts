@@ -1,6 +1,5 @@
 #!/bin/bash
 MOMENTARY_DIR=$(pwd)
-if [ "$1" != "--debug" ]; then
 CHOSEN_DIR=$1
 cd $CHOSEN_DIR
 for i in $(find . -name "*.html"); do
@@ -8,11 +7,3 @@ for i in $(find . -name "*.html"); do
 	mv $i.1 $i
 	echo $i" converted"
 done
-cd $MOMENTARY_DIR
-else
-cd $CHOSEN_DIR = $2
-for i in $(find . -name "*html"); do
-        echo $i
-done
-
-fi
