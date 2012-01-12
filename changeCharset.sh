@@ -7,3 +7,4 @@ for i in $(find . -name "*.html"); do
 	mv $i.1 $i
 	echo $i" converted"
 done
+cd $MOMENTARY_DIR
