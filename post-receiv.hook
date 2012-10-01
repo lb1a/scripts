@@ -1,0 +1,20 @@
+#!/bin/bash
+
+export HOME=/home/
+GIT=/usr/bin/git
+REPO=/
+unset GIT_DIR
+DATE_STAMP=$(date +%Y%m%d%H%M)
+LOG=/tmp/
+
+echo $GIT_DIR >>$LOG
+echo "User is " >>$LOG
+/usr/bin/whoami >>$LOG
+echo "Push at $DATE_STAMP $1 $2 $3" >>$LOG
+cd $REPO
+echo "Active directory is ">> $LOG
+/bin/pwd >>$LOG
+echo "Stash all additional content" >>$LOG
+$GIT stash 2>>$LOG
+echo "Pull command used:" $GIT " pull deploy master 2>>"$LOG >>$LOG
+$GIT pull deploy master 2>>$LOG
